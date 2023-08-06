@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState} from 'react';
+import { Routes, Route } from 'react-router-dom'
+import Landinpage from './Application/Landinpage';
 
-function App() {
+interface IMode {
+  ModeState: boolean,
+  handleModeStatus: () => void,
+}
+
+export const Context = createContext<IMode>({ ModeState: false, handleModeStatus: () => { }, });
+
+const App: React.FunctionComponent = () => {
+  const [darkMode, setDarkMode] = useState(true)
+
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
+  const darkModeData: IMode = {
+    ModeState: darkMode,
+    handleModeStatus: handleDarkMode
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Context.Provider value={darkModeData}>
+        <Routes>
+          <Route path='/' element={<Landinpage />} />
+        </Routes>
+      </Context.Provider>
     </div>
   );
 }

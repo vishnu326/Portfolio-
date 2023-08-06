@@ -1,13 +1,130 @@
+:root {
+  --primaryColor: #F3EFE0;
+  --Color: #010101;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--Color);
+  background-color: var(--primaryColor);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  color: var(--Color);
+  background-color: var(--primaryColor);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 50px;
+  height: 20px;
+  border: 2px solid rgb(146, 143, 143);
+  margin: 20px 80px;
+  background-color: black;
+  border-radius: 10%;
+}
+
+.backgroundGreen {
+  background-color: rgb(247, 247, 141);
+  transition: ease-in-out 0.3s;
+}
+
+.ModeButton {
+  width: 20px;
+  margin: 0;
+  height: 100%;
+  transition: ease-in-out 0.4s;
+  cursor: pointer;
+}
+
+.ModeButtonPosition {
+  margin-left: 30px;
+  transition: ease-in-out 0.5s;
+}
+
+.contentContainer {
+  padding: 100px;
+}
+
+/* .rollerMainContainer {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.RollingText-0 {
+  border: 3px solid black;
+  width: max-content;
+  padding: 5px;
+  transform: rotateX(-180deg);
+  transition: ease-in-out 2s ;
+  /* backface-visibility: hidden; */
+/* } */
+
+.RollingText-0:hover{
+  transform: rotateX(0deg);
+  transition: ease-in-out 2s;
+}
+
+.RollingText-1 {
+  padding: 5px;
+  width: max-content;
+  border: 1px solid black;
+  transform: rotateX(180deg);
+  transition: ease-in-out 2s;
+} */
+
+
+.RollingTextingContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.rollerMainContainer:hover .RollingTextingContainer {
+  transform: rotateX(180deg) scale(0.5);
+}
+
+.RollingText-0, .RollingText-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.RollingText-0 {
+  background-color: #bbb;
+  color: black;
+}
+
+.RollingText-1 {
+  transform: rotateX(180deg);
 }
