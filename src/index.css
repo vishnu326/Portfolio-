@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap');
+
 :root {
   --primaryColor: #F3EFE0;
   --Color: #010101;
@@ -6,9 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Signika Negative';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--Color);
@@ -16,8 +16,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Signika Negative';
 }
 
 h1 {
@@ -33,8 +32,11 @@ h1 {
 
 .headerContainer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
+  align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .buttonContainer {
@@ -43,12 +45,12 @@ h1 {
   height: 20px;
   border: 2px solid rgb(146, 143, 143);
   margin: 20px 80px;
-  background-color: black;
+  background-color: #171717;
   border-radius: 10%;
 }
 
 .backgroundGreen {
-  background-color: rgb(247, 247, 141);
+  background-color: #DDDDDD;
   transition: ease-in-out 0.3s;
 }
 
@@ -69,62 +71,78 @@ h1 {
   padding: 100px;
 }
 
-/* .rollerMainContainer {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  perspective: 1000px;
+.nav-item-container {
+  display: flex;
+  gap: 30px;
 }
 
-.RollingText-0 {
-  border: 3px solid black;
-  width: max-content;
-  padding: 5px;
-  transform: rotateX(-180deg);
-  transition: ease-in-out 2s ;
-  /* backface-visibility: hidden; */
-/* } */
-
-.RollingText-0:hover{
-  transform: rotateX(0deg);
-  transition: ease-in-out 2s;
+.nav-item {
+  cursor: pointer;
+  font-weight: 700;
 }
 
-.RollingText-1 {
-  padding: 5px;
-  width: max-content;
-  border: 1px solid black;
-  transform: rotateX(180deg);
-  transition: ease-in-out 2s;
-} */
+.nav-item:active {
+  scale: 0.8;
+  transition: 0.3s;
+}
 
-
-.RollingTextingContainer {
-  position: relative;
+.profilePic-container {
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  display: flex;
 }
 
-.rollerMainContainer:hover .RollingTextingContainer {
-  transform: rotateX(180deg) scale(0.5);
-}
-
-.RollingText-0, .RollingText-1 {
-  position: absolute;
-  width: 100%;
+.profilePic {
+  background-image: url('./Assets/pic.png');
+  background-size: contain;
+  width: 700px;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  background-repeat: no-repeat;
 }
 
-.RollingText-0 {
-  background-color: #bbb;
-  color: black;
+.RoleContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
 }
 
-.RollingText-1 {
-  transform: rotateX(180deg);
+.Role {
+  font-size: 70px;
+  line-height: 100px;
+  font-weight: 800;
+}
+
+.typed-cursor {
+  font-size: 30px;
+}
+
+.round-Button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: var(--Color);
+  margin-left: 50px;
+  border: none;
+  outline: 1px solid var(--Color);
+  outline-offset: 4px;
+  outline-width: 1px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  transition: 3s ease-in-out;
+  color: var(--primaryColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

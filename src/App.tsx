@@ -1,6 +1,8 @@
-import React, { createContext, useState} from 'react';
+import React, { createContext, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Landinpage from './Application/Landinpage';
+import Header from './Application/Header';
+import Home from './Application/Home';
 
 interface IMode {
   ModeState: boolean,
@@ -26,6 +28,9 @@ const App: React.FunctionComponent = () => {
       <Context.Provider value={darkModeData}>
         <Routes>
           <Route path='/' element={<Landinpage />} />
+          <Route path='/Home' element={<Header />}>
+            <Route index path='main' element={<Home />} />
+          </Route>
         </Routes>
       </Context.Provider>
     </div>
