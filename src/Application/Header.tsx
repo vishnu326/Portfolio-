@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Context } from '../App'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 const root = document.documentElement
 
 const Header = () => {
@@ -13,6 +13,7 @@ const Header = () => {
         root.style.setProperty('--primaryColor', '#171717')
         root.style.setProperty('--Color', '#f7f7f8')
     }
+    const navigate = useNavigate()
     const HeaderContent = [{ id: 1, content: 'Home' }, { id: 1, content: 'About' }, { id: 1, content: 'Career' }, { id: 1, content: 'Projects' }, { id: 1, content: 'Contact Me' }]
     return (
         <div>
@@ -21,7 +22,7 @@ const Header = () => {
                     <div className='nav-item-container'>
                         {HeaderContent.map((item, index) => {
                             return (
-                                <div className='nav-item' key={`${item.content}-${index}`}>{item.content}</div>
+                                <div className='nav-item' key={`${item.content}-${index}`} onClick={() => navigate(`/Home/${item.content === 'Home' ? 'main' : item.content === 'Contact Me' ? 'Contact' : item.content}`)}>{item.content}</div>
                             )
                         })
                         }

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap');
 
 :root {
-  --primaryColor: #F3EFE0;
-  --Color: #010101;
+  --primaryColor: #DDDDDD;
+  --Color: #DA0037;
 }
 
 body {
@@ -79,6 +79,7 @@ h1 {
 .nav-item {
   cursor: pointer;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .nav-item:active {
