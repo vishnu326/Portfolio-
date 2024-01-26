@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap');
 
 :root {
-  --primaryColor: #DDDDDD;
-  --Color: #DA0037;
+  --primaryColor: #171717;
+  --Color: #f7f7f8;
 }
 
 body {
@@ -15,6 +15,10 @@ body {
   background-color: var(--primaryColor);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: 'Signika Negative';
 }
@@ -23,7 +27,7 @@ h1 {
   margin: 0;
 }
 
-.container {
+.EntryContainer {
   width: 100%;
   height: 100vh;
   color: var(--Color);
@@ -91,14 +95,15 @@ h1 {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .profilePic {
   background-image: url('./Assets/pic.png');
   background-size: contain;
-  width: 700px;
+  width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;transform: translate(200px ,80px);
 }
 
 .RoleContainer {
@@ -109,13 +114,15 @@ h1 {
 }
 
 .Role {
-  font-size: 70px;
+  font-size: 65px;
   line-height: 100px;
   font-weight: 800;
+  flex-wrap: nowrap;
 }
 
 .typed-cursor {
-  font-size: 30px;
+  font-size: 50px;
+  padding-left: 20px;
 }
 
 .round-Button {

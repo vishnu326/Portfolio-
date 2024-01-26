@@ -16,7 +16,7 @@ interface IMode {
 export const Context = createContext<IMode>({ ModeState: false, handleModeStatus: () => { }, });
 
 const App: React.FunctionComponent = () => {
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode)
