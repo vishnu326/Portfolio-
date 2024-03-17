@@ -1,48 +1,26 @@
-import React, { createContext, useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
-import Landinpage from './Application/Landinpage';
-import Header from './Application/Header';
-import Home from './Application/Home';
-import About from './Application/About';
-import ContactMe from './Application/contact';
-import Projects from './Application/projects';
-import Career from './Application/career';
-
-interface IMode {
-  ModeState: boolean,
-  handleModeStatus: () => void,
-}
-
-export const Context = createContext<IMode>({ ModeState: false, handleModeStatus: () => { }, });
-
-const App: React.FunctionComponent = () => {
-  const [darkMode, setDarkMode] = useState(false)
-
-  const handleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
-  const darkModeData: IMode = {
-    ModeState: darkMode,
-    handleModeStatus: handleDarkMode
-  }
+import { BrowserRouter as Router } from 'react-router-dom';
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from './components/components';
+function App() {
 
   return (
-    <div>
-      <Context.Provider value={darkModeData}>
-        <Routes>
-          <Route path='/' element={<Landinpage />} />
-          <Route path='/Home' element={<Header />}>
-            <Route index path='main' element={<Home />} />
-            <Route  path='About' element={<About />} />
-            <Route  path='Career' element={<Career />} />
-            <Route  path='Projects' element={<Projects />} />
-            <Route  path='Contact' element={<ContactMe />} />
-          </Route>
-        </Routes>
-      </Context.Provider>
-    </div>
-  );
+    <Router>
+      <div className='relative z-0 bg-primary'>
+        <div className='bg-hero-pattern bg-cover bg-center bg-no-repeat'>
+          <Navbar />
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className='relative z-0'>
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
