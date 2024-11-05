@@ -6,16 +6,8 @@ import { styles } from '../../style';
 import { experiences } from '../../constants';
 import { SectionWrapper } from '../../hoc';
 import { textVariant } from '../../utils/motion';
-interface IExperience {
-  title: string
-  company_name: string,
-  icon: string,
-  iconBg: string,
-  date: string,
-  points: string[]
-}
 
-const ExperienceCard = ({ experience }: { experience: IExperience }) => (
+const ExperienceCard = ({ experience }) => (
 
   <VerticalTimelineElement contentStyle={{ background: '#1d1836', color: '#fff' }} contentArrowStyle={{ borderRight: '7px solid #232631' }} date={experience.date} iconStyle={{ background: experience.iconBg }} icon={<div className='flex justify-center items-center w-full h-full'>
     <img src={experience.icon} alt={experience.title} className='w-[60%] h-[60%] object-contain rounded-full' />
@@ -44,7 +36,7 @@ const Experience = () => {
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
           {
-            experiences.map((experience: IExperience, index: number) => {
+            experiences.map((experience, index) => {
               return <ExperienceCard experience={experience} key={index} />
             })
           }

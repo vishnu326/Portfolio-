@@ -7,7 +7,7 @@ import { projects } from '../../constants'
 import { fadeIn, textVariant } from '../../utils/motion'
 import { styles } from '../../style'
 
-const ProjectCard = ({ index, name, description, image, tags, source_code_link }: { index: number, name: string, description: string, image: string, tags: { name: string, color: string }[], source_code_link: string }) => {
+const ProjectCard = ({ index, name, description, image, tags, source_code_link }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt

@@ -6,22 +6,18 @@ import { SectionWrapper } from '../../hoc';
 import { slideIn } from '../../utils/motion';
 import { EarthCanvas } from './canvas';
 
-interface IForm {
-  name: string,
-  email: string,
-  message: string
-}
+
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState<IForm>();
+  const [form, setForm] = useState();
   const [loading, setLoading] = useState<boolean>(false);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target
     if (form)
       setForm({ ...form, [name]: value });
   }
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     emailjs.send('service_i00xyaq', 'template_02s13wj', {

@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from '../Loader';
 
-const Computers = ({ isMobile }: { isMobile: boolean }) => {
+const Computers = ({ isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   return (
     <mesh>
@@ -22,7 +22,7 @@ const ComputerCanavas = () => {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
     setIsMobile(mediaQuery.matches);
-    const mediaQueryListner = (event: MediaQueryListEvent) => setIsMobile(event.matches);
+    const mediaQueryListner = (event) => setIsMobile(event.matches);
     mediaQuery.addEventListener('change', mediaQueryListner);
     return () => mediaQuery.removeEventListener('change', mediaQueryListner);
   }, []);
