@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { styles } from '../../style';
 import { SectionWrapper } from '../../hoc';
 import { fadeIn, textVariant } from '../../utils/motion';
-import { testimonials } from '../../constants';
 
 const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => {
   return (
@@ -37,9 +36,9 @@ const Feedbacks = () => {
         </motion.div>
       </div>
       <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => {
+        {/* {testimonials.map((testimonial, index) => {
           return (<FeedbackCard key={index} index={index} {...testimonial} />)
-        })}
+        })} */}
       </div>
     </div>
   )

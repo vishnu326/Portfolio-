@@ -24,7 +24,7 @@ import Zustand from './tech/zustand.png';
 
 import turbostart from "./company/turbostart_logo.jpeg";
 
-import carrent from "./carrent.png";
+import manisKitchen from "./manisKitchen.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -51,7 +51,7 @@ export {
   typescript,
   threejs,
   turbostart,
-  carrent,
+  manisKitchen,
   jobit,
   tripguide,
   Zustand
