@@ -1,24 +1,23 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  turbostart,
-  manisKitchen,
-  threejs,
-  Zustand
-} from "../assets";
+
+import backend from "../assets/backend.png";
+import creator from "../assets/creator.png";
+import mobile from "../assets/mobile.png";
+import web from "../assets/web.png";
+import css from "../assets/tech/css.png";
+import docker from "../assets/tech/docker.png";
+import figma from "../assets/tech/figma.png";
+import git from "../assets/tech/git.png";
+import html from "../assets/tech/html.png";
+import javascript from "../assets/tech/javascript.png";
+import mongodb from "../assets/tech/mongodb.png";
+import nodejs from "../assets/tech/nodejs.png";
+import reactjs from "../assets/tech/reactjs.png";
+import tailwind from "../assets/tech/tailwind.png";
+import typescript from "../assets/tech/typescript.png";
+import threejs from "../assets/tech/threejs.svg";
+import Zustand from '../assets/tech/zustand.png';
+import turbostart from "../assets/company/turbostart_logo.jpeg";
+import manisKitchen from "../assets/manisKitchen.png";
 
 export const navLinks = [
   {
