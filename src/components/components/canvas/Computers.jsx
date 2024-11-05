@@ -17,7 +17,7 @@ const Computers = ({ isMobile }) => {
 
 
 const ComputerCanavas = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
